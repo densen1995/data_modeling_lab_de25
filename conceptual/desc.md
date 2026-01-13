@@ -3,7 +3,7 @@
 
 **Conceptual ERD**
 
-<img src = "clm.png" width =500>
+<img src = "cdm.png" width =500>
 
 **Relationship statements**
 
