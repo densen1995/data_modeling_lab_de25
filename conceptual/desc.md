@@ -47,8 +47,18 @@
 - A Facility may have *zero or many* Classes
 - A Class has their lectures/classes or takes place in *one* Facility
 
+**Personal_data-Student**
+- A Personal data can belong to *zero or one* Student
+- A Student may have *one* Personal data
+
+**Personal_data-Educational_leader**
+- A Personal data can belong to *zero or one* Educational leader
+- An Educational leader may have *one* Personal data
 
 
+**Personal_data-Educator**
+- A Personal data can belong to *zero or one* Educator
+- An Educator may have *one* Personal data
 
 
 
