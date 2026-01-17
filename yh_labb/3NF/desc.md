@@ -7,6 +7,7 @@
 
  **Second Normal Form (2NF)**
  - 1NF
+ - Junction tables (Program_course, Class_course, Educator_course) contain only foreign keys
  - All non-prime(key) attributes are fully functionally dependent on the whole primary key
  - No partial dependency exists
 
