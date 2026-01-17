@@ -5,4 +5,7 @@
 
 <img src = "pdm.png" width =500>
 
+**Diagram made using dbdiagram.io**
+
 **Physical Model Meets 3NF Requirements with all manay to many relationships broken(Junction tables)**
+
