@@ -1,102 +1,102 @@
 CREATE TABLE program(
-  "program_id" INTEGER PRIMARY KEY,
-  "program_name" "VARCHAR(50)" NOT NULL,
-  "description" TEXT
+  program_id INTEGER PRIMARY KEY,
+  program_name VARCHAR(50) NOT NULL,
+  descriptions TEXT
 );
 
 CREATE TABLE course (
-  "course_id" INTEGER PRIMARY KEY,
-  "course_code" "VARCHAR(20)" UNIQUE NOT NULL,
-  "course_name" "VARCHAR(100)" NOT NULL,
-  "credits" INTEGER NOT NULL,
-  "description" TEXT,
-  "is_standalone" BOOLEAN DEFAULT false """implies that most courses must belong to a program and could only be few stand alone courses, 
+  course_id INTEGER PRIMARY KEY,
+  course_code VARCHAR(20) UNIQUE NOT NULL,
+  course_name VARCHAR(100) NOT NULL,
+  credits INTEGER NOT NULL,
+  descriptions TEXT,
+  is_standalone BOOLEAN DEFAULT false """implies that most courses must belong to a program and could only be few stand alone courses, 
                                             so if not 'False' then 'True' """
 );
 
 CREATE TABLE facility (
-  "facility_id" INTEGER PRIMARY KEY,
-  "city_name" "VARCHAR(50)" NOT NULL,
-  "address" TEXT NOT NULL
+  facility_id INTEGER PRIMARY KEY,
+  city_name VARCHAR(50) NOT NULL,
+  adress TEXT NOT NULL
 );
 
 CREATE TABLE educational_leader (
-  "educational_leader_id" INTEGER PRIMARY KEY,
-  "first_name" "VARCHAR(50)",
-  "last_name" "VARCHAR(50)",
-  "email" "VARCHAR(100)",
-  "personal_data_id" INTEGER UNIQUE NOT NULL
+  educational_leader_id INTEGER PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  email VARCHAR(100),
+  personal_data_id INTEGER UNIQUE NOT NULL
 );
 
 CREATE TABLE class (
-  "class_id" INTEGER PRIMARY KEY,
-  "program_id" INTEGER NOT NULL,
-  "educational_leader_id" INTEGER NOT NULL,
-  "facility_id" INTEGER NOT NULL,
-  "start_year" DATE NOT NULL
+  class_id INTEGER PRIMARY KEY,
+  program_id INTEGER NOT NULL,
+  educational_leader_id INTEGER NOT NULL,
+  facility_id INTEGER NOT NULL,
+  start_year DATE NOT NULL
 );
 
 CREATE TABLE employment_type(
-  "employment_type_id" INTEGER PRIMARY KEY,
-  "type_name" "VARCHAR(50)" UNIQUE NOT NULL
+  employment_type_id INTEGER PRIMARY KEY,
+  type_name VARCHAR(50) UNIQUE NOT NULL
 );
 
 CREATE TABLE personal_data (
-  "personal_data_id" INTEGER PRIMARY KEY,
-  "personal_number" "VARCHAR(12)" UNIQUE NOT NULL,
-  "date_of_birth" TIMESTAMP NOT NULL,
-  "address" TEXT NOT NULL
+  personal_data_id INTEGER PRIMARY KEY,
+  personal_number VARCHAR(12) UNIQUE NOT NULL,
+  date_of_birth TIMESTAMP NOT NULL,
+  address TEXT NOT NULL
 );
 
 CREATE TABLE educator (
-  "educator_id" INTEGER PRIMARY KEY,
-  "first_name" "VARCHAR(50)",
-  "last_name" "VARCHAR(50)",
-  "email" "VARCHAR(100)",
-  "employment_type_id" INTEGER NOT NULL,
-  "personal_data_id" INTEGER UNIQUE NOT NULL
+  educator_id INTEGER PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  email VARCHAR(100),
+  employment_type_id INTEGER NOT NULL,
+  personal_data_id INTEGER UNIQUE NOT NULL
 );
 
 CREATE TABLE student (
-  "student_id" INTEGER PRIMARY KEY,
-  "first_name" "VARCHAR(50)",
-  "last_name" "VARCHAR(50)",
-  "email" "VARCHAR(100)",
-  "personal_data_id" INT UNIQUE NOT NULL,
-  "class_id" INTEGER NOT NULL
+  student_id INTEGER PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  email VARCHAR(100),
+  personal_data_id INT UNIQUE NOT NULL,
+  class_id INTEGER NOT NULL
 );
 
 CREATE TABLE company (
-  "company_id" INTEGER PRIMARY KEY,
-  "company_name" "VARCHAR(100)",
-  "organization_nr" "VARCHAR(20)",
-  "f_tax" BOOLEAN,
-  "address" TEXT
+  company_id INTEGER PRIMARY KEY,
+  company_name VARCHAR(100),
+  organization_nr VARCHAR(20),
+  f_tax BOOLEAN,
+  adress TEXT
 );
 
 CREATE TABLE consultant (
-  "consultant_id" INTEGER PRIMARY KEY,
-  "educator_id" INTEGER UNIQUE NOT NULL,
-  "company_id" INTEGER NOT NULL,
-  "hourly_pay" INTEGER NOT NULL
+  consultant_id INTEGER PRIMARY KEY,
+  educator_id INTEGER UNIQUE NOT NULL,
+  company_id INTEGER NOT NULL,
+  hourly_pay INTEGER NOT NULL
 );
 
 CREATE TABLE program_course (
-  "program_id" INTEGER,
-  "course_id" INTEGER,
-  "PRIMARY" "KEY(program_id,course_id)"
+  program_id INTEGER,
+  course_id INTEGER,
+  PRIMARY KEY(program_id,course_id)
 );
 
 CREATE TABLE class_course(
-  "class_id" INTEGER,
-  "course_id" INTEGER,
-  "PRIMARY" "KEY(class_id,course_id)"
+  class_id INTEGER,
+  course_id INTEGER,
+  PRIMARY KEY(class_id,course_id)
 );
 
 CREATE TABLE educator_course (
-  "educator_id" INTEGER,
-  "course_id" INTEGER,
-  "PRIMARY" "KEY(educator_id,course_id)"
+  educator_id INTEGER,
+  course_id INTEGER,
+  PRIMARY KEY(educator_id,course_id)
 );
 
 ALTER TABLE educational_leader ADD FOREIGN KEY ("personal_data_id") REFERENCES personal_data ("personal_data_id");
