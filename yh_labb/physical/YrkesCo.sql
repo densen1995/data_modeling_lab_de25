@@ -10,7 +10,8 @@ CREATE TABLE "Course" (
   "course_name" "VARCHAR(100)" NOT NULL,
   "credits" INTEGER NOT NULL,
   "description" TEXT,
-  "is_standalone" BOOLEAN DEFAULT false
+  "is_standalone" BOOLEAN DEFAULT false """implies that most courses must belong to a program and could only be few stand alone courses, 
+                                            so if not 'False' then 'True' """
 );
 
 CREATE TABLE "Facility" (
