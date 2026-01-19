@@ -13,14 +13,14 @@ VALUES
     (2, 'Data Science', 'Program focused on analytics');
 
 
-CREATE TABLE IF NOT EXISTS yh.course (
+CREATE TABLE IF NOT EXISTS yh.course(
   course_id INTEGER PRIMARY KEY,
   course_code VARCHAR(20) UNIQUE NOT NULL,
   course_name VARCHAR(100) NOT NULL,
   credits INTEGER NOT NULL,
   descriptions TEXT,
-  is_standalone BOOLEAN DEFAULT false """implies that most courses must belong to a program and could only be few stand alone courses, 
-                                            so if not 'False' then 'True' """
+  is_standalone BOOLEAN DEFAULT false --implies that most courses must belong to a program and could only be few stand alone courses which are exceptions--, 
+                                            --so if not 'False then 'True' --
 );
 
 INSERT INTO yh.course(course_id, course_code, course_name, credits, descriptions, is_standalone)
@@ -83,10 +83,10 @@ CREATE TABLE IF NOT EXISTS yh.personal_data (
   personal_data_id INTEGER PRIMARY KEY,
   personal_number VARCHAR(12) UNIQUE NOT NULL,
   date_of_birth TIMESTAMP NOT NULL,
-  address TEXT NOT NULL
+  adress TEXT NOT NULL
 );
 
-INSERT INTO yh.personal_data(personal_data_id, personal_number, date_of_birth) 
+INSERT INTO yh.personal_data(personal_data_id, personal_number, date_of_birth, adress) 
 VALUES
 (1, '199001011234', '1990-01-01', 'Street 1'),
 (2, '198505056789', '1985-05-05', 'Street 2'),
@@ -104,8 +104,8 @@ CREATE TABLE IF NOT EXISTS yh.educator (
 
 INSERT INTO yh.educator(educator_id, first_name, last_name, email, employment_type_id, personal_data_id)
 VALUES
-    (1, 'Erik', 'Johansson', 'erik@yrkesco.se', 2, 2);
-
+    (1, 'Erik', 'Johansson', 'erik@yrkesco.se', 2, 2),
+    (2, 'Dennis', 'Jonathan', 'erik@yrkesco.se', 1, 1);
 
 CREATE TABLE IF NOT EXISTS yh.student (
   student_id INTEGER PRIMARY KEY,

@@ -21,7 +21,7 @@
 
 **Program-Course**
 - A Program consists *one or many* Courses
-- A course may belong to *zero or many* Programs
+- A course may belong to *zero or many* Programs (a course could be a stand alone course)
 
 **Class-Course**
 - A Class can study *one or many* Courses
@@ -34,7 +34,6 @@
 **Educator-Employment_type**
 - An Educator has *one and only one* employment_type 
 - An Employment_type may be associated with *zero or many* Educators
-
 
 
 **Consultant-Company**
