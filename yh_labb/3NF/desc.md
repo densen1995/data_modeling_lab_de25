@@ -3,7 +3,7 @@
  **First Normal Form (1NF)**
  - Each table has a primary key
  - No repeating groups or multi-valued attributes
- - Unifrom column data
+ - Uniform column data
 
  **Second Normal Form (2NF)**
  - 1NF

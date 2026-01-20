@@ -20,8 +20,8 @@ CREATE TABLE IF NOT EXISTS yh.course(
   credits INTEGER NOT NULL,
   descriptions TEXT,
   is_standalone BOOLEAN DEFAULT false --implies that most courses must belong to a program and could only be few stand alone courses which are exceptions--, 
-                                            --so if not 'False then 'True' --
-);
+                                      --so if not 'False then 'True' --
+  );
 
 INSERT INTO yh.course(course_id, course_code, course_name, credits, descriptions, is_standalone)
 VALUES
@@ -51,7 +51,8 @@ CREATE TABLE IF NOT EXISTS yh.educational_leader (
 
 INSERT INTO yh.educational_leader(educational_leader_id, first_name, last_name, email, personal_data_id) 
 VALUES
-    (1, 'Anna', 'Larsson', 'anna@yrkesco.se', 1);
+    (1, 'Anita', 'Svensson', 'anna.svensson@yh.se', 1)
+    
 
 
 CREATE TABLE IF NOT EXISTS yh.class (
@@ -88,9 +89,10 @@ CREATE TABLE IF NOT EXISTS yh.personal_data (
 
 INSERT INTO yh.personal_data(personal_data_id, personal_number, date_of_birth, adress) 
 VALUES
-(1, '199001011234', '1990-01-01', 'Street 1'),
-(2, '198505056789', '1985-05-05', 'Street 2'),
-(3, '200001012222', '2000-01-01', 'Student Street');
+(1, '19900101-1234', '1990-01-01', 'Street 1'),
+(2, '19850505-6789', '1985-05-05', 'Street 2'),
+(3, '20000101-2222', '2000-01-01', 'Student Street'),
+(4, '19920101-6722', '1992-01-01', 'Kungsgatan 34'),
 
 
 CREATE TABLE IF NOT EXISTS yh.educator (
@@ -105,7 +107,7 @@ CREATE TABLE IF NOT EXISTS yh.educator (
 INSERT INTO yh.educator(educator_id, first_name, last_name, email, employment_type_id, personal_data_id)
 VALUES
     (1, 'Erik', 'Johansson', 'erik@yrkesco.se', 2, 2),
-    (2, 'Dennis', 'Jonathan', 'erik@yrkesco.se', 1, 1);
+    (2, 'Dennis', 'Jonathan', 'erik@yrkesco.se', 1, 4);
 
 CREATE TABLE IF NOT EXISTS yh.student (
   student_id INTEGER PRIMARY KEY,
@@ -118,7 +120,8 @@ CREATE TABLE IF NOT EXISTS yh.student (
 
 INSERT INTO yh.student(student_id, first_name, last_name, email, personal_data_id, class_id)
 VALUES
-    (1, 'Sara', 'Nilsson', 'sara@student.se', 3, 1);
+    (1, 'Sara', 'Nilsson', 'sara@student.se', 3, 1),
+   
 
 CREATE TABLE IF NOT EXISTS yh.company (
   company_id INTEGER PRIMARY KEY,
@@ -156,6 +159,7 @@ INSERT INTO yh.program_course(program_id, course_id)
 VALUES
     (1, 1),
     (1, 2);
+    
 
 
 CREATE TABLE IF NOT EXISTS yh.class_course(
@@ -168,6 +172,7 @@ INSERT INTO yh.class_course(class_id, course_id)
 VALUES
     (1, 1),
     (1, 2);
+   
 
 
 CREATE TABLE IF NOT EXISTS yh.educator_course (
