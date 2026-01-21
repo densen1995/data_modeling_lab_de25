@@ -19,7 +19,7 @@
  - Non-prime(key) attributes depend only on the primary key, not on other non-prime attributes
 
 **Example**
-- Table Student
+**Table Student**
 - student_id (PK)
 - first_name
 - last_name
@@ -27,6 +27,7 @@
 - personal_data_id (FK, UNIQUE)
 - class_id (FK)
 
+**3NF**
 - student_id uniquely identifies a student
 - All non-prime attributes depend only on student_id
 - Sensitive attributes (personal number, address, date of birth) are not stored here
