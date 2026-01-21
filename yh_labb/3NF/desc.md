@@ -19,13 +19,13 @@
  - Non-prime(key) attributes depend only on the primary key, not on other non-prime attributes
 
 **Example**
-Table Student
-student_id (PK)
-first_name
-last_name
-email
-personal_data_id (FK, UNIQUE)
-class_id (FK)
+- Table Student
+- student_id (PK)
+- first_name
+- last_name
+- email
+- personal_data_id (FK, UNIQUE)
+- class_id (FK)
 
 - student_id uniquely identifies a student
 - All non-prime attributes depend only on student_id
