@@ -26,8 +26,8 @@ CREATE TABLE IF NOT EXISTS yh.course(
 INSERT INTO yh.course(course_id, course_code, course_name, credits, descriptions, is_standalone)
 VALUES
     (1, 'SQL101', 'SQL Basics', 20, 'Intro to SQL', FALSE),
-    (2, 'PY101', 'Python Basics', 25, 'Intro to Python', TRUE);
-
+    (2, 'PY101', 'Python Basics', 25, 'Intro to Python', TRUE),
+    (3, 'DM103', 'Data Modeling', 30, 'Intro to data modeling', FALSE);
 
 CREATE TABLE IF NOT EXISTS yh.facility (
   facility_id INTEGER PRIMARY KEY,
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS yh.educator (
 INSERT INTO yh.educator(educator_id, first_name, last_name, email, employment_type_id, personal_data_id)
 VALUES
     (1, 'Erik', 'Johansson', 'erik@yrkesco.se', 2, 2),
-    (2, 'Dennis', 'Jonathan', 'erik@yrkesco.se', 1, 4);
+    (2, 'Dennis', 'Jonathan', 'densen@yrkesco.se', 1, 4);
 
 CREATE TABLE IF NOT EXISTS yh.student (
   student_id INTEGER PRIMARY KEY,
