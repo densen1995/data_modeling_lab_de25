@@ -1,4 +1,5 @@
 -- show all classes with their program name
+--inner join table class and program to achieve this
 SELECT
   c.class_id,
   p.program_name,
@@ -24,6 +25,7 @@ FROM yh.course
 WHERE is_standalone = FALSE;
 
 --Count how many courses each class has
+--inner join table class-course and class to achieve this
 SELECT
   c.class_id,
   COUNT(cc.course_id) AS number_of_courses
@@ -33,6 +35,7 @@ JOIN yh.class_course cc
 GROUP BY c.class_id;
 
 --Show all facilities and how many classes they host
+--left join table facility and class to achieve this, introducing a new alias and grouping 
 SELECT
   f.city_name,
   COUNT(c.class_id) AS number_of_classes
@@ -42,6 +45,7 @@ LEFT JOIN yh.class c
 GROUP BY f.city_name;
 
 --Show consultants and their companies
+--inner join table consultant ,educator and company to achieve this
 SELECT
   e.first_name,
   e.last_name,
@@ -61,6 +65,7 @@ FROM yh.class
 GROUP BY educational_leader_id;
 
 --Show each educator with their employment status
+--inner join table educator and employment-type to achieve this
 SELECT
   e.first_name,
   e.last_name,
